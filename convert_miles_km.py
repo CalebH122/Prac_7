@@ -16,15 +16,21 @@ class Convertor(App):
         try:
             result = int(number) + 1
             self.root.ids.input_number.text = str(result)
+            self.root.ids.output_number.text = str(result * 1.609)
         except ValueError:
-            self.root.ids.input_number.text = str(0 + 1)
+            new_number = 0 + 1
+            self.root.ids.input_number.text = str(new_number)
+            self.root.ids.output_number.text = str(new_number * 1.609)
 
     def handle_minus(self, number):
         try:
             result = int(number) - 1
             self.root.ids.input_number.text = str(result)
+            self.root.ids.output_number.text = str(result * 1.609)
         except ValueError:
-            self.root.ids.input_number.text = str(0 - 1)
+            new_number = 0 - 1
+            self.root.ids.input_number.text = str(new_number)
+            self.root.ids.output_number.text = str(new_number * 1.609)
 
     def convert_mkm(self, meter):
         try:
