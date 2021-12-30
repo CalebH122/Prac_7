@@ -1,23 +1,29 @@
 BoxLayout:
     orientation: 'vertical'
     BoxLayout:
+        size_hint_y: 0.5
         orientation: 'horizontal'
         TextInput:
             id: input_number
             text: '0'
             font_size: 48
             multiline: False
-            size_hint_x: 2
         BoxLayout:
+            size_hint_x: 0.25
             orientation: 'vertical'
             Button:
                 text: 'Up'
+                on_press: app.handle_add(input_number.text)
             Button:
                 text: 'Down'
+                on_press: app.handle_minus(input_number.text)
     BoxLayout:
         orientation: 'vertical'
         Button:
             text: 'Convert m to km'
+            on_press: app.convert_mkm(input_number.text)
         Label:
             id: output_number
             text: ''
+            font_size: 48
+            color: (1, 1, 0, 1)
